@@ -62,10 +62,11 @@ export default class SongCard extends React.Component {
         const { song } = this.props;
         let num = this.getItemNum();
         console.log("num: " + num);
-        let itemClass = "playlister-song";
+        let itemClass = "unselected-list-card";
         if (this.state.draggedTo) {
-            itemClass = "playlister-song-dragged-to";
+            itemClass = "selected-list-card";
         }
+        let songLink = "https://www.youtube.com/watch?v=" + song.youTubeId;
         return (
             <div
                 id={'song-' + num}
@@ -77,7 +78,7 @@ export default class SongCard extends React.Component {
                 onDrop={this.handleDrop}
                 draggable="true"
             >
-                {song.title} by {song.artist}
+               {num}. <a href={songLink}>{song.title} by {song.artist} </a>
             </div>
         )
     }

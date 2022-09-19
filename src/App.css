@@ -19,7 +19,7 @@ body {
 
 #root {
   background-color: var(--swatch-primary);
-  font-family: serif;
+  font-family: 'Tangerine', serif;
   position: absolute;
   width: 80%;
   left: 10%;
@@ -191,8 +191,8 @@ input {
 
 .modal-root {
   position: relative;
-  max-width: 1200vw;
-  max-height: 600vh;
+  max-width: 60vw;
+  max-height: 50vh;
   overflow: visible;
   display: flex;
   flex-direction: column;
