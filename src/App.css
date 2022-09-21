@@ -108,6 +108,12 @@ body {
   float:left;
 }
 
+
+.toolbar-button-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
 .list-card, .selected-list-card, .unselected-list-card {
   font-size: 18pt;
   margin: 10px;
