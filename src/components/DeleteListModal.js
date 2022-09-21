@@ -9,7 +9,7 @@ export default class DeleteListModal extends Component {
         }
         return (
             <div 
-                class="modal" 
+                className="modal" 
                 id="delete-list-modal" 
                 data-animation="slideInOutLeft">
                     <div class="modal-root" id='verify-delete-list-root'>
