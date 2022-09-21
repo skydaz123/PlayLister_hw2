@@ -68,7 +68,6 @@ export default class SongCard extends React.Component {
     render() {
         const { song } = this.props;
         let num = this.getItemNum();
-        console.log("num: " + num);
         let itemClass = "unselected-list-card";
         if (this.state.draggedTo) {
             itemClass = "selected-list-card";

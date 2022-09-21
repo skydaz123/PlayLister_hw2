@@ -221,6 +221,7 @@ class App extends React.Component {
         this.setStateWithUpdatedList(list);
     }
 
+
     confirmDeleteSong = (index) => {
         console.log(this.state);
         if (this.state.currentList !== null) {
@@ -250,7 +251,11 @@ class App extends React.Component {
         this.setStateWithUpdatedList(list);
     }
 
-
+    reverseEditSong = (index, originalSong) => {
+        let list = this.state.currentList;
+        list.songs[index] = originalSong;
+        this.setStateWithUpdatedList(list);
+    } 
     editSong = (initTitle, initArtist, initYouTubeId, index) => {
         let newSong = {
             title: initTitle,
@@ -261,7 +266,7 @@ class App extends React.Component {
         list.songs[index] = newSong;
         this.setStateWithUpdatedList(list);
         this.setState(prevState => ({
-            songIndexForDeletion: null,
+            songIndexForEditing: null,
             currentList: prevState.currentList,
             listKeyPairMarkedForDeletion: prevState.listKeyPairMarkedForDeletion,
             sessionData: prevState.sessionData
@@ -273,7 +278,7 @@ class App extends React.Component {
 
     markSongForEditing = (index) => {
         this.setState(prevState => ({
-            songIndexForDeletion: index,
+            songIndexForEditing: index,
             currentList: prevState.currentList,
             listKeyPairMarkedForDeletion: prevState.listKeyPairMarkedForDeletion,
             sessionData: prevState.sessionData
@@ -430,7 +435,7 @@ class App extends React.Component {
 
     hideEditSongModal = () => {
         this.setState(prevState => ({
-            songIndexForDeletion: null,
+            songIndexForEditing: null,
             currentList: prevState.currentList,
             listKeyPairMarkedForDeletion: prevState.listKeyPairMarkedForDeletion,
             sessionData: prevState.sessionData
