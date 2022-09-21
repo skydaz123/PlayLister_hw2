@@ -444,13 +444,27 @@ class App extends React.Component {
         let modal = document.getElementById("delete-list-modal");
         modal.classList.remove("is-visible");
     }
+
+
+    handleKeyDown = (event) => {
+        let charCode = String.fromCharCode(event.which).toLowerCase();
+        if (event.ctrlKey && charCode === 'z') {
+            console.log("poop");
+            this.undo();
+        }
+        else if (event.ctrlKey && charCode === 'y') {
+            console.log("poop");
+            this.redo();
+        }
+    }
+
     render() {
         let canAddSong = this.state.currentList !== null;
         let canUndo = this.tps.hasTransactionToUndo();
         let canRedo = this.tps.hasTransactionToRedo();
         let canClose = this.state.currentList !== null;
         return (
-            <div id="root">
+            <div id="root" tabIndex="1" onKeyDown={this.handleKeyDown}>
                 <Banner />
                 <SidebarHeading
                     createNewListCallback={this.createNewList}

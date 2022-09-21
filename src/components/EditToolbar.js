@@ -26,7 +26,7 @@ export default class EditToolbar extends React.Component {
         }
         
         return (
-            <div id="edit-toolbar" onKeyDown={handleKeyDown}>
+            <div id="edit-toolbar" onKeyDown={handleKeyDown} tabIndex="1">
                 <input
                     type="button"
                     id='add-song-button'
